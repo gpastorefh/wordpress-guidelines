@@ -36,7 +36,7 @@ Menu::getInstance()->get(['theme_location' => 'main-menu', 'depth' => 3]);
 Internamente:
 
 - legge gli elementi del menu e calcola le classi di contesto di WordPress (`current-menu-item`, `current-menu-ancestor`…) per sapere quale voce è **attiva**;
-- applica il filtro standard `wp_nav_menu_objects` (compatibilità con plugin);
+- applica il [filtro](23-basi-wordpress.md#hook) standard `wp_nav_menu_objects` (compatibilità con plugin);
 - normalizza ogni voce in un array pulito e costruisce l'albero rispettando `depth`.
 
 L'albero viene messo nel `data-config` di `HeaderCmp`/`FooterCmp` e usato anche per il markup di fallback.

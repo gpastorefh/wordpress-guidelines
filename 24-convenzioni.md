@@ -1,4 +1,4 @@
-# 23. Convenzioni e strumenti di qualità
+# 24. Convenzioni e strumenti di qualità
 
 > 📁 **File coinvolti** ([mappa del progetto](02-struttura-progetto.md)): `package.json` · `eslint.config.ts` · `.oxlintrc.json` · `.prettierrc.json` · `.husky/` · `includes/Support/Html.php` · `CLAUDE.md` · `.claude/`
 
@@ -18,10 +18,10 @@
 - ogni file inizia con `defined('ABSPATH') or die;` (impedisce l'esecuzione diretta del file fuori da WordPress);
 - `final class`, tipi dichiarati, un file per classe, namespace `WpxStarter\`;
 - nei template, sintassi con graffe `if () { … }`, non la sintassi alternativa `if: … endif;`;
-- **escape sempre in output**: `esc_html`, `esc_attr`, `esc_url`, `wp_kses_post`, oppure gli helper di `Support/Html` (`inlineKses`, `brKses` per textarea con `<br>`, `attributes`, `relForTarget` per i link `_blank`);
+- [**escape sempre in output**](23-basi-wordpress.md#escape): `esc_html`, `esc_attr`, `esc_url`, `wp_kses_post`, oppure gli helper di `Support/Html` (`inlineKses`, `brKses` per textarea con `<br>`, `attributes`, `relForTarget` per i link `_blank`);
 - campi ACF letti solo tramite `Support\Acf`;
 - ogni **ID letto da un campo o da un'opzione** passa da `Wpml::translateObjectId(s)` prima dell'uso ([sezione 18](18-traduzioni.md));
-- stringhe in inglese, con text domain `wpx-starter`.
+- stringhe in inglese, con [text domain](23-basi-wordpress.md#gettext) `wpx-starter`.
 
 ## Claude Code
 
@@ -29,4 +29,4 @@ Il repository contiene configurazione per Claude Code: `CLAUDE.md` e `MEMORY.md`
 
 ---
 
-← [22. Asset: dev server, build e manifest](22-asset-build.md) · [Indice](README.md) · [24. Glossario WordPress minimo](24-glossario.md) →
+← [23. WordPress in pratica: le API usate nel tema](23-basi-wordpress.md) · [Indice](README.md) · [25. Glossario WordPress minimo](25-glossario.md) →

@@ -6,7 +6,7 @@
 
 La ricerca nativa di WordPress (`?s=parola`) cerca solo in tre colonne della tabella dei post: **titolo**, **riassunto** e **contenuto** (`post_content`, cioè l'editor classico/Gutenberg).
 
-Con il Post Builder il contenuto delle pagine **non è in `post_content`**: l'editor è nascosto e tutti i testi stanno nei campi ACF, salvati come *post meta*. Inoltre il Flexible Content salva ogni sotto-campo come una riga di meta separata, con chiavi del tipo:
+Con il Post Builder il contenuto delle pagine **non è in `post_content`**: l'editor è nascosto e tutti i testi stanno nei campi ACF, salvati come [*post meta*](23-basi-wordpress.md#dati). Inoltre il Flexible Content salva ogni sotto-campo come una riga di meta separata, con chiavi del tipo:
 
 ```
 post_builder_0_text
@@ -149,11 +149,11 @@ e reindicizza solo i post type presenti in `IndexablePostTypes`.
 
 Grazie all'hash, i contenuti invariati vengono saltati quasi a costo zero.
 
-> ℹ️ WP-Cron non è un vero cron di sistema: parte quando qualcuno visita il sito. In produzione conviene disattivarlo (`DISABLE_WP_CRON`) e chiamare `wp-cron.php` da un cron di sistema, così gli eventi girano a orari regolari anche con poco traffico.
+> ℹ️ [WP-Cron](23-basi-wordpress.md#altre-api) non è un vero cron di sistema: parte quando qualcuno visita il sito. In produzione conviene disattivarlo (`DISABLE_WP_CRON`) e chiamare `wp-cron.php` da un cron di sistema, così gli eventi girano a orari regolari anche con poco traffico.
 
 ## 4. Cercare nell'indice: `SearchQuery`
 
-`SearchQuery` modifica la query SQL di `WP_Query` tramite due filtri, **solo** per le query che lo chiedono esplicitamente con la query var `wpx_search_index`:
+`SearchQuery` modifica la query SQL di [`WP_Query`](23-basi-wordpress.md#wp-query) tramite due [filtri](23-basi-wordpress.md#hook), **solo** per le query che lo chiedono esplicitamente con la query var `wpx_search_index`:
 
 ```php
 // search.php

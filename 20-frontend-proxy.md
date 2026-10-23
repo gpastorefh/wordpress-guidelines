@@ -75,7 +75,7 @@ Gli utenti non vedono mai questo HTML "grezzo": `#app` resta nascosto da `v-cloa
 **Regole pratiche:**
 
 - il markup di fallback è **semplice e semantico**: niente classi, niente stili, solo i tag giusti e il contenuto (link, titoli, testi);
-- deve rispettare le stesse regole di **escape** del resto del template (`esc_url`, `esc_html`…): è comunque HTML che arriva al browser;
+- deve rispettare le stesse regole di [**escape**](23-basi-wordpress.md#escape) del resto del template (`esc_url`, `esc_html`…): è comunque HTML che arriva al browser;
 - vale la pena quando la prop contiene **contenuto significativo** (link, testi, elenchi). Per le opzioni di presentazione (`theme`, `columns`, varianti) non serve;
 - **attenzione allo slot di default**: il fallback viene scartato solo perché il componente non ha un `<slot />` senza nome. Se un componente lo dichiara, quell'HTML viene **renderizzato davvero**. Succede per esempio con `CardGridCmp`, che usa lo slot di default proprio per ricevere le card: lì tutto il contenuto senza `data-v-slot` è contenuto reale, e non va messo markup di fallback.
 

@@ -2,7 +2,7 @@
 
 Questa guida spiega **come è costruito** un progetto basato su questo starter (WordPress come CMS, Vue 3 come livello di presentazione) e **perché** sono state fatte certe scelte.
 
-È pensata per chi conosce poco WordPress e poco PHP: ogni concetto WordPress viene introdotto prima di mostrare come lo usiamo. Gli esempi di codice sono presi dal progetto reale, ma vanno letti come esempi del *pattern*, non come documentazione dei contenuti specifici del sito. Lo stesso vale per gli screenshot della bacheca (cartella `images/`).
+È pensata per chi conosce poco WordPress e poco PHP: ogni concetto WordPress viene introdotto prima di mostrare come lo usiamo, e la [sezione 23](23-basi-wordpress.md) raccoglie le API di WordPress più usate nel tema. Gli esempi di codice sono presi da un progetto di esempio reale, ma vanno letti come esempi del *pattern*, non come documentazione dei contenuti specifici del sito. Lo stesso vale per gli screenshot della bacheca (cartella `images/`).
 
 ## Versione HTML
 
@@ -41,5 +41,6 @@ Per aggiungere una sezione basta creare un file `NN-nome.md` che inizi con `# NN
 20. [Frontend: il componente proxy e il registry](20-frontend-proxy.md)
 21. [Frontend: componenti globali, auto-import, Storybook](21-frontend-componenti.md)
 22. [Asset: dev server, build e manifest](22-asset-build.md)
-23. [Convenzioni e strumenti di qualità](23-convenzioni.md)
-24. [Glossario WordPress minimo](24-glossario.md)
+23. [WordPress in pratica: le API usate nel tema](23-basi-wordpress.md)
+24. [Convenzioni e strumenti di qualità](24-convenzioni.md)
+25. [Glossario WordPress minimo](25-glossario.md)

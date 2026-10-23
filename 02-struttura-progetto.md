@@ -14,15 +14,15 @@ progetto-di-esempio/
 ├── .env.docker.template      # variabili per Docker Compose (copiate in .env.docker)   → 3
 ├── dump/                     # dump del database (make dump-db / restore-db)           → 3
 │
-├── package.json, yarn.lock   # dipendenze frontend (Yarn 4)                            → 23
+├── package.json, yarn.lock   # dipendenze frontend (Yarn 4)                            → 24
 ├── vite.config.ts            # build, alias Vue con compilatore, file hot, auto-import → 19, 21, 22
 ├── vite/lucide-resolver.ts   # auto-import delle icone Lucide                          → 21
 ├── .storybook/               # configurazione di Storybook                             → 21
-├── tsconfig*.json, eslint.config.ts, .oxlintrc.json, .prettierrc.json, .husky/         → 23
+├── tsconfig*.json, eslint.config.ts, .oxlintrc.json, .prettierrc.json, .husky/         → 24
 ├── src/                      # tutto il frontend Vue (dettaglio sotto)                 → 19–22
 │
-├── CLAUDE.md, MEMORY.md      # convenzioni per Claude Code                             → 23
-├── .claude/                  # subagent e skill (tra cui translator)                   → 18, 23
+├── CLAUDE.md, MEMORY.md      # convenzioni per Claude Code                             → 24
+├── .claude/                  # subagent e skill (tra cui translator)                   → 18, 24
 │
 └── wp/                       # installazione WordPress completa, montata nel container
     └── wp-content/

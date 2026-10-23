@@ -48,7 +48,7 @@ Infine la nuova etichetta (`'Newsletter link'`) va tradotta con la skill `transl
 
 ## Header e footer
 
-`header.php` e `footer.php` sono inclusi da ogni template con `get_header()` / `get_footer()`. Entrambi:
+`header.php` e `footer.php` sono inclusi da ogni template con `get_header()` / `get_footer()` e contengono le [funzioni obbligatorie](23-basi-wordpress.md#template) (`wp_head()`, `wp_footer()`…). Entrambi:
 
 1. raccolgono in un array `$headerConfig` / `$footerConfig` i dati dalle opzioni, dai menu e da WPML (lingue alternative);
 2. renderizzano un `<wp-proxy-cmp data-component="HeaderCmp">` / `FooterCmp`;

@@ -16,7 +16,7 @@ Se `Assets.php` trova quel file, stampa nell'`<head>` i tag che puntano **dirett
 <script type="module" src="http://localhost:5173/src/main.ts"></script>
 ```
 
-Risultato: si naviga il sito WordPress su `localhost:8000` con **hot reload** dei componenti Vue. I tag sono stampati a mano e non con `wp_enqueue_script` perché WordPress aggiungerebbe `?ver=…` agli URL, cosa che rompe il dev server.
+Risultato: si naviga il sito WordPress su `localhost:8000` con **hot reload** dei componenti Vue. I tag sono stampati a mano e non con [`wp_enqueue_script`](23-basi-wordpress.md#enqueue) perché WordPress aggiungerebbe `?ver=…` agli URL, cosa che rompe il dev server.
 
 ## Produzione: il manifest
 
@@ -33,4 +33,4 @@ Gli entry di build sono tre: `main` (app), `critical` (CSS inline) ed `editor` (
 
 ---
 
-← [21. Frontend: componenti globali, auto-import, Storybook](21-frontend-componenti.md) · [Indice](README.md) · [23. Convenzioni e strumenti di qualità](23-convenzioni.md) →
+← [21. Frontend: componenti globali, auto-import, Storybook](21-frontend-componenti.md) · [Indice](README.md) · [23. WordPress in pratica: le API usate nel tema](23-basi-wordpress.md) →

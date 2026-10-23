@@ -120,7 +120,7 @@ Il template:
 1. **legge** i campi;
 2. **adatta** i dati alla forma che si aspetta il componente (camelCase, booleani veri, default);
 3. **serializza** le props in `data-config` con `Html::attributes()` (che fa il JSON e l'escape corretto);
-4. **emette** gli slot come elementi con `data-v-slot="nome"`, **sanitizzando** ogni HTML (`wp_kses_post`, `esc_html`, `Html::inlineKses`…);
+4. **emette** gli slot come elementi con `data-v-slot="nome"`, **sanitizzando** ([escape](23-basi-wordpress.md#escape)) ogni HTML (`wp_kses_post`, `esc_html`, `Html::inlineKses`…);
 5. facoltativamente, stampa un **markup di fallback** (HTML semplice, senza `data-v-slot`) con i contenuti passati come prop, ad esempio un link. Vue lo ignora, ma rende l'HTML del server completo ([sezione 20](20-frontend-proxy.md)).
 
 ## Passo 5 — Ricerca interna

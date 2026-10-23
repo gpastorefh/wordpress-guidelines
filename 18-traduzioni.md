@@ -10,7 +10,7 @@ Sono i testi scritti nel codice: etichette dei campi in bacheca, nomi dei blocch
 
 Regole:
 
-- si scrivono **sempre in inglese**, dentro le funzioni di traduzione con il text domain del tema:
+- si scrivono **sempre in inglese**, dentro le [funzioni di traduzione](23-basi-wordpress.md#gettext) con il text domain del tema:
 
   ```php
   __('Add block', 'wpx-starter')           // restituisce la stringa tradotta

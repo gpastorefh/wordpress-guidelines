@@ -71,7 +71,7 @@ IconSelectField::make(__('Icon', 'wpx-starter'), 'icon'),
 
 ## L'anteprima in bacheca
 
-Un menu a tendina con soli nomi di file ("heart-handshake", "heand-heart"…) è poco utilizzabile. `Setup/AcfIconSelectAssets` carica, **solo nelle schermate con campi ACF**, un piccolo JS e CSS (`assets/admin/acf-icon-select.{js,css}`):
+Un menu a tendina con soli nomi di file ("heart-handshake", "heand-heart"…) è poco utilizzabile. `Setup/AcfIconSelectAssets` [carica](23-basi-wordpress.md#enqueue), **solo nelle schermate con campi ACF**, un piccolo JS e CSS (`assets/admin/acf-icon-select.{js,css}`):
 
 ```php
 add_action('acf/input/admin_enqueue_scripts', [$this, 'enqueue']);

@@ -13,7 +13,7 @@ Un **hub** è una normale **Pagina** costruita col Post Builder che contiene il 
 - chiede **quale post type** elencare e quanti elementi per pagina;
 - facoltativamente una **selezione manuale** (un campo Relationship per ogni post type, mostrato con conditional logic);
 - facoltativamente **filtri** (ricerca, temi, anno, ordinamento) gestiti con parametri GET;
-- esegue una `WP_Query` e renderizza ogni risultato con la **card** di quel post type ([sezione 14](14-loop-card.md));
+- esegue una [`WP_Query`](23-basi-wordpress.md#wp-query) e renderizza ogni risultato con la **card** di quel post type ([sezione 14](14-loop-card.md));
 - passa a Vue i dati di paginazione.
 
 Così il redattore costruisce la pagina "Progetti" come vuole, e l'elenco è solo uno dei blocchi.
@@ -32,7 +32,7 @@ HubPage::getInstance()->getId('event');
 
 ## La paginazione degli hub
 
-Se la pagina hub ha lo stesso slug del CPT (pagina `/projects/` e progetti in `/projects/nome-progetto/`), l'URL `/projects/page/2/` verrebbe interpretato da WordPress come "il progetto chiamato *page*" → 404. `Setup/HubPagePagination` intercetta il filtro `request`: se il percorso è `<pagina hub>/page/N/` lo risolve verso la pagina hub con `paged=N`. Non aggiunge regole di rewrite, quindi non richiede flush.
+Se la pagina hub ha lo stesso slug del CPT (pagina `/projects/` e progetti in `/projects/nome-progetto/`), l'URL `/projects/page/2/` verrebbe interpretato da WordPress come "il progetto chiamato *page*" → 404. `Setup/HubPagePagination` intercetta il filtro `request` ([quando scatta](23-basi-wordpress.md#ciclo-richiesta)): se il percorso è `<pagina hub>/page/N/` lo risolve verso la pagina hub con `paged=N`. Non aggiunge regole di rewrite, quindi non richiede flush.
 
 ## Template singoli
 

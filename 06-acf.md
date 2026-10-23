@@ -71,7 +71,7 @@ public static function fields(): array
 ## Convenzioni sui campi
 
 - **nome macchina (slug) in inglese**, snake_case: `event_start_date`, non `data_inizio_evento`;
-- **etichette in inglese** dentro `__()`: vengono poi tradotte via `.po` (vedi [sezione 18](18-traduzioni.md));
+- **etichette in inglese** dentro [`__()`](23-basi-wordpress.md#gettext): vengono poi tradotte via `.po` (vedi [sezione 18](18-traduzioni.md));
 - **ogni campo dichiara il suo comportamento multilingua** con una macro: `->wpmlTranslate()` o `->wpmlCopy()` (vedi [sezione 18](18-traduzioni.md)).
 
 ## Lettura dei campi: mai `get_field()` diretto

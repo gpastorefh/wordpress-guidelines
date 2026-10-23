@@ -15,7 +15,8 @@ const groups: Array<{ text: string; from: number; to: number }> = [
   { text: 'Contenuti e struttura', from: 12, to: 17 },
   { text: 'Traduzioni', from: 18, to: 18 },
   { text: 'Frontend', from: 19, to: 22 },
-  { text: 'Riferimenti', from: 23, to: 99 },
+  { text: 'Basi di WordPress', from: 23, to: 23 },
+  { text: 'Riferimenti', from: 24, to: 99 },
 ];
 
 interface Section {
@@ -136,7 +137,8 @@ export default defineConfig({
       { text: 'Inizia', link: sections[0]?.link ?? '/' },
       { text: 'Post Builder', link: '/07-post-builder' },
       { text: 'Frontend', link: '/19-frontend-dom' },
-      { text: 'Glossario', link: '/24-glossario' },
+      { text: 'Basi WP', link: '/23-basi-wordpress' },
+      { text: 'Glossario', link: '/25-glossario' },
     ],
     sidebar: buildSidebar(sections),
     outline: { level: [2, 3], label: 'In questa pagina' },

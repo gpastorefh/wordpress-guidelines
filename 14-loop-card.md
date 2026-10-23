@@ -20,7 +20,7 @@ wp_reset_postdata();            // ripristina il post corrente originale
 
 Ogni post type ha una card in `parts/card-{post-type}.php`. Il contratto è:
 
-1. **viene inclusa dentro un loop**: legge il post corrente con le funzioni di WordPress (`get_the_title()`, `get_permalink()`, `has_post_thumbnail()`…), non riceve il post come argomento;
+1. **viene inclusa dentro un loop**: legge il [post corrente](23-basi-wordpress.md#loop) con le funzioni di WordPress (`get_the_title()`, `get_permalink()`, `has_post_thumbnail()`…), non riceve il post come argomento;
 2. riceve solo **opzioni di presentazione** in `$args` (tema chiaro/scuro, tag dei titoli, `hideDate`…), con default sensati;
 3. produce un `<wp-proxy-cmp>` verso un componente card Vue (`CardContentCmp`, `CardEventCmp`, `CardProfileCmp`…).
 
@@ -45,7 +45,7 @@ $config = [
 
 ## Chi usa le card
 
-Grazie alla convenzione sul nome del file, chiunque può renderizzare un elenco di qualsiasi tipo senza conoscerne la card:
+Grazie alla convenzione sul nome del file e a [`get_template_part()`](23-basi-wordpress.md#template), chiunque può renderizzare un elenco di qualsiasi tipo senza conoscerne la card:
 
 ```php
 get_template_part('parts/card-' . $postType, null, ['theme' => 'light']);

@@ -9,7 +9,7 @@
 
 ## Come sono registrati
 
-Una classe per CPT in `includes/PostTypes/`, una per tassonomia in `includes/Taxonomies/`, istanziate in `functions.php`. Struttura tipica di un CPT:
+Una classe per CPT in `includes/PostTypes/`, una per tassonomia in `includes/Taxonomies/`, istanziate in `functions.php` e agganciate a `init` ([perché proprio lì](23-basi-wordpress.md#ciclo-richiesta)). Struttura tipica di un CPT:
 
 ```php
 register_post_type('project', [
@@ -87,7 +87,7 @@ final class RegionTaxonomy
 
 poi `new RegionTaxonomy();` in `functions.php` e `composer dump-autoload --optimize`. Per renderla **pubblica** basterebbe `public => true`, `publicly_queryable => true`, un `rewrite => ['slug' => 'regions', 'with_front' => false]` e un template `taxonomy-region.php`.
 
-Usarla in una query (ad esempio dentro un blocco hub):
+Usarla in una [query](23-basi-wordpress.md#wp-query) (ad esempio dentro un blocco hub):
 
 ```php
 $query = new WP_Query([

@@ -4,7 +4,7 @@
 
 ## Cos'è un tema (in breve)
 
-Un tema WordPress è una cartella in `wp-content/themes/` che contiene file PHP con nomi convenzionali. WordPress, per ogni richiesta, sceglie **quale file eseguire** in base alla [gerarchia dei template](https://developer.wordpress.org/themes/basics/template-hierarchy/): ad esempio per un contenuto di tipo `project` cerca `single-project.php`, poi `single.php`, poi `index.php`. Il file `functions.php` viene invece caricato **sempre**, prima di qualsiasi template: è il punto d'ingresso del codice del tema.
+Un tema WordPress è una cartella in `wp-content/themes/` che contiene file PHP con nomi convenzionali. WordPress, per ogni richiesta, sceglie **quale file eseguire** in base alla [gerarchia dei template](https://developer.wordpress.org/themes/basics/template-hierarchy/): ad esempio per un contenuto di tipo `project` cerca `single-project.php`, poi `single.php`, poi `index.php`. Il file `functions.php` viene invece caricato **sempre**, prima di qualsiasi template ([quando, nel ciclo di una richiesta](23-basi-wordpress.md#ciclo-richiesta)): è il punto d'ingresso del codice del tema.
 
 ## Struttura
 
@@ -75,7 +75,7 @@ final class ProjectPostType
 }
 ```
 
-> **Hook in 30 secondi.** WordPress, durante il caricamento, "annuncia" dei momenti (`init`, `wp_head`, `acf/include_fields`…) e dei punti in cui un valore può essere modificato (`request`, `wp_mail_from`…). `add_action('init', $callback)` significa "quando arrivi a `init`, esegui questa funzione". `add_filter('x', $callback)` significa "prima di usare il valore `x`, passalo da questa funzione e usa quello che restituisce".
+> **Hook in 30 secondi.** WordPress, durante il caricamento, "annuncia" dei momenti (`init`, `wp_head`, `acf/include_fields`…) e dei punti in cui un valore può essere modificato (`request`, `wp_mail_from`…). `add_action('init', $callback)` significa "quando arrivi a `init`, esegui questa funzione". `add_filter('x', $callback)` significa "prima di usare il valore `x`, passalo da questa funzione e usa quello che restituisce". Priorità, argomenti e gli hook usati nel tema sono nella [sezione 23](23-basi-wordpress.md#hook).
 
 **Perché una classe per responsabilità invece del classico `functions.php` da 2000 righe?**
 
