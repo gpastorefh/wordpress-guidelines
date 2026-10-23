@@ -1,0 +1,116 @@
+@import '@fontsource/red-hat-display/latin-600.css';
+@import '@fontsource/red-hat-display/latin-700.css';
+@import '@fontsource/manrope/latin-400.css';
+@import '@fontsource/manrope/latin-600.css';
+@import '@fontsource/manrope/latin-700.css';
+
+/* Palette and fonts taken from the project's design tokens (src/styles/_base.css). */
+:root {
+  --vp-font-family-base: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --vp-font-family-heading: 'Red Hat Display', 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+  --vp-c-brand-1: #2e78a6; /* ucla-blue-600 */
+  --vp-c-brand-2: #245b80; /* ucla-blue-700 */
+  --vp-c-brand-3: #3c8ebb; /* ucla-blue-500 */
+  --vp-c-brand-soft: rgb(60 142 187 / 0.14);
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #16508e 10%, #3c8ebb 55%, #4e734d 95%);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #3c8ebb 50%, #4e734d 50%);
+  --vp-home-hero-image-filter: blur(44px);
+
+  --vp-button-brand-bg: #2e78a6;
+  --vp-button-brand-hover-bg: #245b80;
+  --vp-button-brand-active-bg: #224e6a;
+}
+
+.dark {
+  --vp-c-bg: #0b1a2e;
+  --vp-c-bg-alt: #102642; /* oxford-blue-900 */
+  --vp-c-bg-elv: #13304f;
+  --vp-c-bg-soft: #183b62; /* oxford-blue-800 */
+
+  --vp-c-brand-1: #61a8cf; /* ucla-blue-400 */
+  --vp-c-brand-2: #98c6e1; /* ucla-blue-300 */
+  --vp-c-brand-3: #3c8ebb; /* ucla-blue-500 */
+  --vp-c-brand-soft: rgb(97 168 207 / 0.16);
+
+  --vp-home-hero-name-background: linear-gradient(120deg, #8cbeed 10%, #61a8cf 55%, #8dc1d3 95%);
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.VPHero .name,
+.VPHero .text,
+.VPFeature .title {
+  font-family: var(--vp-font-family-heading);
+  letter-spacing: -0.01em;
+}
+
+/* Screenshots: framed, and zoomable on click (see theme/index.ts). */
+.vp-doc img {
+  display: block;
+  margin-inline: auto;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgb(16 38 66 / 0.12);
+  cursor: zoom-in;
+}
+
+/* The italic paragraph right after an image is its caption. */
+.vp-doc p:has(> img) + p:has(> em:only-child) {
+  margin-top: -4px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc p:has(> img) + p:has(> em:only-child) em {
+  font-style: normal;
+}
+
+.image-zoom {
+  max-width: min(96vw, 1600px);
+  max-height: 96vh;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  cursor: zoom-out;
+}
+
+.image-zoom::backdrop {
+  background: rgb(11 26 46 / 0.85);
+  backdrop-filter: blur(2px);
+}
+
+.image-zoom img {
+  display: block;
+  max-width: 100%;
+  max-height: 96vh;
+  border-radius: 12px;
+}
+
+/* Wide tables scroll inside themselves instead of stretching the page. */
+.vp-doc table {
+  display: block;
+  overflow-x: auto;
+}
+
+.VPFeature .details {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Home: the README body follows the hero; its own H1 would repeat the hero title. */
+.VPHome .vp-doc h1:first-child {
+  display: none;
+}
+
+.VPHome .vp-doc.container {
+  max-width: 960px;
+  margin-inline: auto;
+  padding: 48px 24px 96px;
+}

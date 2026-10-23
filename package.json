@@ -1,0 +1,17 @@
+{
+  "name": "guida-sviluppatori",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "yarn@4.17.0",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "@fontsource/manrope": "^5.2.8",
+    "@fontsource/red-hat-display": "^5.2.8",
+    "vitepress": "^1.6.4"
+  }
+}
